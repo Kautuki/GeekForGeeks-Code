@@ -1,0 +1,46 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String s=sc.next();
+		int l=sc.nextInt();
+		int n=s.length();
+		int size=0;
+		if(n%l!=0)
+		{
+		    size=(n/l)+1;
+		}
+		else
+		{
+		    size=n/l;
+		}
+		System.out.println(size);
+		int z=0;
+		String[] arr=new String[size];
+		for(int i=0;i<size;i++)
+		{
+		    int p=z+l;
+		    if(p <(n-1))
+		    {
+		    arr[i]=s.substring(z,z+l);
+		    z=z+l;
+		    }
+		    else
+		    {
+		        arr[i]=s.substring(z,n);
+		    }
+		    
+		}
+		int count=0,max=0;
+		for(int i=0;i<size;i++)
+		{
+		    if(arr[i].contains("1"))
+		    {
+		        count++;
+		    }
+		    max=Math.max(max,count);
+		}
+		System.out.println(max);
+	}
+}
