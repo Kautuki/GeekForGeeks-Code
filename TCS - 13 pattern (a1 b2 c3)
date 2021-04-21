@@ -1,0 +1,26 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+public class Main{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        String s1[]=s.split(" ");
+        
+        String ans="";
+        for(int i=0;i<s1.length;i++)
+        {
+           
+            int n=Integer.parseInt(s1[i].substring(1));
+            char ch=s1[i].charAt(0);
+            
+            for(int k=0;k<n;k++)
+            {
+                ans=ans+" "+ch;
+            }
+        }
+        ans=ans.trim();
+        System.out.print(ans);
+    }
+}
